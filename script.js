@@ -1,61 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
-  // 1. Service Tabs Switching
+  // 1. Catalog Category Filter
   // ==========================================================================
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanes = document.querySelectorAll('.tab-pane');
-  const searchInput = document.getElementById('serviceSearchInput');
-  const searchClear = document.getElementById('serviceSearchClear');
+  const catButtons = document.querySelectorAll('.cat-tab-btn');
+  const productCards = document.querySelectorAll('.product-card');
+  const searchInput = document.getElementById('catalogSearchInput');
+  const searchClear = document.getElementById('catalogSearchClear');
 
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-tab');
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      tabPanes.forEach(pane => pane.classList.remove('active'));
-
-      button.classList.add('active');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.classList.add('active');
-      }
-
-      // If user switches tab, clear or re-apply search within the tab
-      if (searchInput && searchInput.value.trim() !== '') {
-        filterServices(searchInput.value.trim().toLowerCase());
-      }
+      const filter = btn.getAttribute('data-filter');
+      filterProducts(filter, searchInput ? searchInput.value.trim().toLowerCase() : '');
     });
   });
 
   // ==========================================================================
-  // 2. Real-Time Service Search
+  // 2. Real-Time Catalog Search
   // ==========================================================================
-  function filterServices(query) {
-    const allServiceRows = document.querySelectorAll('.service-row');
-    
-    if (!query) {
-      allServiceRows.forEach(row => row.classList.remove('hidden'));
-      if (searchClear) searchClear.style.display = 'none';
-      return;
-    }
+  function filterProducts(categoryFilter, query) {
+    productCards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      const text = card.textContent.toLowerCase();
 
-    if (searchClear) searchClear.style.display = 'block';
+      const matchesCat = (categoryFilter === 'all' || cardCat === categoryFilter);
+      const matchesQuery = (!query || text.includes(query));
 
-    let foundInActiveTab = false;
-    allServiceRows.forEach(row => {
-      const text = row.textContent.toLowerCase();
-      if (text.includes(query)) {
-        row.classList.remove('hidden');
-        // If row is in an inactive tab, we can also check if we should show parent tab
+      if (matchesCat && matchesQuery) {
+        card.classList.remove('hidden');
       } else {
-        row.classList.add('hidden');
+        card.classList.add('hidden');
       }
     });
+
+    if (searchClear) {
+      searchClear.style.display = query ? 'block' : 'none';
+    }
   }
 
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      filterServices(e.target.value.trim().toLowerCase());
+      const activeBtn = document.querySelector('.cat-tab-btn.active');
+      const activeCat = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+      filterProducts(activeCat, e.target.value.trim().toLowerCase());
     });
   }
 
@@ -63,73 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     searchClear.addEventListener('click', () => {
       if (searchInput) {
         searchInput.value = '';
-        filterServices('');
+        const activeBtn = document.querySelector('.cat-tab-btn.active');
+        const activeCat = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+        filterProducts(activeCat, '');
         searchInput.focus();
       }
     });
   }
 
   // ==========================================================================
-  // 3. Gallery Category Filters
-  // ==========================================================================
-  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
-  const galleryCards = document.querySelectorAll('.gallery-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      galleryCards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        if (filter === 'all' || cat === filter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  // ==========================================================================
-  // 4. Lightbox Modal for Gallery
-  // ==========================================================================
-  const lightboxModal = document.getElementById('lightboxModal');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxOverlay = document.getElementById('lightboxOverlay');
-
-  const openLightbox = (imgSrc, captionText) => {
-    if (lightboxModal && lightboxImg) {
-      lightboxImg.src = imgSrc;
-      if (lightboxCaption) lightboxCaption.textContent = captionText || '';
-      lightboxModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  const closeLightbox = () => {
-    if (lightboxModal) {
-      lightboxModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  };
-
-  galleryCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const img = card.getAttribute('data-img');
-      const caption = card.getAttribute('data-caption');
-      openLightbox(img, caption);
-    });
-  });
-
-  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-  if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
-
-  // ==========================================================================
-  // 5. FAQ Accordion
+  // 3. FAQ Accordion
   // ==========================================================================
   const faqItems = document.querySelectorAll('.faq-item');
 
@@ -138,9 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (trigger) {
       trigger.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        // Close others
         faqItems.forEach(i => i.classList.remove('active'));
-        // Toggle current
         if (!isActive) {
           item.classList.add('active');
         }
@@ -149,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 6. Mobile Navigation
+  // 4. Mobile Burger Navigation
   // ==========================================================================
   const burgerBtn = document.getElementById('burgerBtn');
   const mainNav = document.getElementById('mainNav');
@@ -167,46 +97,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 7. Booking Modal
+  // 5. Order Modal with Dynamic WhatsApp / Telegram Links
   // ==========================================================================
-  const bookingModal = document.getElementById('bookingModal');
-  const modalClose = document.getElementById('modalClose');
-  const modalOverlay = document.getElementById('modalOverlay');
+  const orderModal = document.getElementById('orderModal');
+  const orderModalClose = document.getElementById('orderModalClose');
+  const orderModalOverlay = document.getElementById('orderModalOverlay');
+  const orderModalSubtitle = document.getElementById('orderModalSubtitle');
+  const waOrderLink = document.getElementById('waOrderLink');
 
-  const openBookingModal = () => {
-    if (bookingModal) {
-      bookingModal.classList.add('active');
+  const openOrderModal = (itemName) => {
+    if (orderModal) {
+      if (itemName) {
+        orderModalSubtitle.textContent = 'Выбран товар: ' + itemName;
+        const msg = encodeURIComponent('Здравствуйте! Хочу заказать в BLOOM: ' + itemName + '. Подскажите по наличию и доставке?');
+        if (waOrderLink) {
+          waOrderLink.href = 'https://wa.me/79260470047?text=' + msg;
+        }
+      } else {
+        orderModalSubtitle.textContent = 'Выберите удобный способ связи с дежурным флористом';
+        if (waOrderLink) {
+          waOrderLink.href = 'https://wa.me/79260470047?text=' + encodeURIComponent('Здравствуйте! Хочу проконсультироваться и заказать цветы в BLOOM.');
+        }
+      }
+      orderModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
   };
 
-  const closeBookingModal = () => {
-    if (bookingModal) {
-      bookingModal.classList.remove('active');
+  const closeOrderModal = () => {
+    if (orderModal) {
+      orderModal.classList.remove('active');
       document.body.style.overflow = '';
     }
   };
 
-  document.querySelectorAll('.open-booking-btn').forEach(btn => {
+  document.querySelectorAll('.open-order-modal-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openBookingModal();
+      openOrderModal();
     });
   });
 
-  if (modalClose) modalClose.addEventListener('click', closeBookingModal);
-  if (modalOverlay) modalOverlay.addEventListener('click', closeBookingModal);
+  document.querySelectorAll('.order-item-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const itemName = btn.getAttribute('data-item');
+      openOrderModal(itemName);
+    });
+  });
+
+  if (orderModalClose) orderModalClose.addEventListener('click', closeOrderModal);
+  if (orderModalOverlay) orderModalOverlay.addEventListener('click', closeOrderModal);
 
   // ==========================================================================
-  // 8. Global Escape Key Listener
+  // 6. Escape Key
   // ==========================================================================
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      closeLightbox();
-      closeBookingModal();
+      closeOrderModal();
       if (mainNav) mainNav.classList.remove('active');
     }
   });
 
-  console.log('Сайт "Моя красивая" полностью загружен и готов.');
+  console.log('Сайт цветочной мастерской BLOOM успешно инициализирован.');
 });
