@@ -918,3 +918,501 @@ h1, h2, h3, h4 {
   .contacts-wrapper { grid-template-columns: 1fr; padding: 25px; }
   .footer__inner { flex-direction: column; text-align: center; }
 }
+
+
+/* ==========================================================================
+   Service Search Bar
+   ========================================================================== */
+.service-search-box {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 35px;
+}
+
+.service-search-box .search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  pointer-events: none;
+}
+
+.service-search-box input {
+  width: 100%;
+  padding: 16px 45px 16px 52px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  outline: none;
+}
+
+.service-search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(180, 122, 102, 0.15);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: none;
+  line-height: 1;
+}
+
+.search-clear-btn:hover {
+  color: var(--text-main);
+}
+
+.service-row.hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Gallery Filters & Zoom Icon
+   ========================================================================== */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.gallery-filter-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery-filter-btn:hover,
+.gallery-filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(180, 122, 102, 0.25);
+}
+
+.gallery-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-card__zoom-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: var(--transition);
+}
+
+.gallery-card:hover .gallery-card__zoom-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery-card.hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   FAQ Accordion
+   ========================================================================== */
+.faq-accordion {
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.faq-item.active {
+  border-color: rgba(180, 122, 102, 0.4);
+}
+
+.faq-item__trigger {
+  width: 100%;
+  padding: 22px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.faq-item__trigger:hover {
+  color: var(--accent);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-item__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 26px;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-item__body {
+  max-height: 300px;
+  padding: 0 26px 24px;
+}
+
+/* ==========================================================================
+   Interactive Booking Options Modal
+   ========================================================================== */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.booking-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.booking-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(32, 28, 26, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.booking-modal__content {
+  position: relative;
+  width: 90%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px 35px;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.booking-modal.active .booking-modal__content {
+  transform: translateY(0);
+}
+
+.booking-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 2rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: var(--transition);
+}
+
+.booking-modal__close:hover {
+  color: var(--text-main);
+}
+
+.booking-modal__head {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.booking-modal__title {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.booking-modal__desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.booking-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-opt-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  transition: var(--transition);
+}
+
+.booking-opt-card:hover {
+  border-color: var(--accent);
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.booking-opt-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.booking-opt-card--yclients .booking-opt-card__icon {
+  background: rgba(180, 122, 102, 0.15);
+  color: var(--accent);
+}
+
+.booking-opt-card--yandex .booking-opt-card__icon {
+  background: rgba(245, 166, 35, 0.15);
+  color: #d48b11;
+}
+
+.booking-opt-card--wa .booking-opt-card__icon {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+}
+
+.booking-opt-card--tg .booking-opt-card__icon {
+  background: rgba(34, 158, 217, 0.15);
+  color: #229ed9;
+}
+
+.booking-opt-card--phone .booking-opt-card__icon {
+  background: rgba(43, 39, 36, 0.1);
+  color: var(--text-main);
+}
+
+.booking-opt-card__body {
+  flex-grow: 1;
+}
+
+.booking-opt-card__title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-opt-card__title .tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 50px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.booking-opt-card__sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  line-height: 1.35;
+}
+
+.booking-opt-card .arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.booking-opt-card:hover .arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Lightbox Modal
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 15, 14, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox__container {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+}
+
+.lightbox__caption {
+  color: #e5ded7;
+  font-size: 0.95rem;
+  margin-top: 15px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  font-size: 2.2rem;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Mobile Floating Action Bar
+   ========================================================================== */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+  padding: 10px 16px;
+  z-index: 99;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 10px;
+}
+
+.mobile-bottom-bar__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-alt);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.mobile-bottom-bar__btn--primary {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.78rem;
+}
+
+.mobile-bottom-bar__btn--wa {
+  background: #25d366;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 70px;
+  }
+  .mobile-bottom-bar {
+    display: grid;
+  }
+  .booking-modal__content {
+    padding: 30px 20px 25px;
+  }
+}

@@ -38,8 +38,9 @@
         <a href="#services" class="nav__link">Услуги и цены</a>
         <a href="#features" class="nav__link">Особенности</a>
         <a href="#masters" class="nav__link">Мастера</a>
-        <a href="#gallery" class="nav__link">Интерьер</a>
+        <a href="#gallery" class="nav__link">Галерея</a>
         <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#faq" class="nav__link">Вопросы</a>
         <a href="#contacts" class="nav__link">Контакты</a>
       </nav>
 
@@ -48,7 +49,7 @@
           <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
           <span class="phone-text">+7 (926) 850-51-50</span>
         </a>
-        <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--primary btn--header">Онлайн-запись</a>
+        <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--primary btn--header open-booking-btn">Онлайн-запись</a>
         <button class="burger" id="burgerBtn" aria-label="Открыть меню">
           <span></span><span></span><span></span>
         </button>
@@ -69,9 +70,9 @@
         </p>
 
         <div class="hero__cta">
-          <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
-            Онлайн-запись на Яндекс Картах
-          </a>
+          <button class="btn btn--primary btn--lg open-booking-btn">
+            Выбрать услугу и записаться онлайн
+          </button>
           <a href="#services" class="btn btn--outline btn--lg">
             Смотреть услуги и цены
           </a>
@@ -174,6 +175,13 @@
         <p class="section-head__desc">Актуальные цены и прозрачный расчет. Все процедуры проводятся на сертифицированной косметике премиум-класса.</p>
       </div>
 
+            <!-- Service Search -->
+      <div class="service-search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="serviceSearchInput" placeholder="Поиск процедуры: маникюр, кудри, чистка, ботокс, брови, массаж..." aria-label="Поиск услуги">
+        <button id="serviceSearchClear" class="search-clear-btn" aria-label="Очистить поиск">&times;</button>
+      </div>
+
       <!-- Service Tabs -->
       <div class="tabs-nav" role="tablist">
         <button class="tab-btn active" data-tab="tab-nails">Ногтевой сервис</button>
@@ -193,7 +201,7 @@
               <p class="service-row__desc">Бережная обработка кутикулы, придание формы, выравнивание ногтевой пластины и стойкое покрытие гель-лаком.</p>
             </div>
             <div class="service-row__price">1 700 – 3 200 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -202,7 +210,7 @@
               <p class="service-row__desc">Втирание минеральной пасты и пчелиного воска полировочным блоком из телячьей кожи. Зеркальный блеск и укрепление без лака.</p>
             </div>
             <div class="service-row__price">2 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -211,7 +219,7 @@
               <p class="service-row__desc">Обработка стоп и пальчиков, уходовый крем, покрытие гель-лаком. Доступно покрытие хной.</p>
             </div>
             <div class="service-row__price">от 2 800 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -220,7 +228,7 @@
               <p class="service-row__desc">Безопасное аппаратное снятие, придание формы одноразовой пилочкой, нанесение питательного масла.</p>
             </div>
             <div class="service-row__price">1 700 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -229,7 +237,7 @@
               <p class="service-row__desc">Глубокое питание и увлажнение сухой кожи рук, скрабирование и теплая парафиновая ванночка.</p>
             </div>
             <div class="service-row__price">от 1 200 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -243,7 +251,7 @@
               <p class="service-row__desc">Подбор формы с учетом структуры волос, формы лица и вашего стиля. Работаем со сложными техниками.</p>
             </div>
             <div class="service-row__price">3 000 – 12 000 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -252,7 +260,7 @@
               <p class="service-row__desc">Сухая стрижка каждого завитка в естественном положении, подбор домашнего ухода, бережная укладка диффузором.</p>
             </div>
             <div class="service-row__price">от 4 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -261,7 +269,7 @@
               <p class="service-row__desc">Плавные переходы, бережное осветление с защитными бондами, тонирование в холодные и теплые оттенки.</p>
             </div>
             <div class="service-row__price">от 8 000 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -270,7 +278,7 @@
               <p class="service-row__desc">Освежение цвета, придание плотности и блеска волосам без агрессивного окисления.</p>
             </div>
             <div class="service-row__price">от 4 000 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -279,7 +287,7 @@
               <p class="service-row__desc">Восстановление поврежденной структуры, шелковистость и гладкость полотна волос.</p>
             </div>
             <div class="service-row__price">от 5 000 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -293,7 +301,7 @@
               <p class="service-row__desc">Диагностика кожи врачом-косметологом, бережный протокол очищения и пилинг нового поколения.</p>
             </div>
             <div class="service-row__price">7 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -302,7 +310,7 @@
               <p class="service-row__desc">Интенсивная стимуляция клеток, выравнивание тона лица, устранение признаков фотостарения и пигментации.</p>
             </div>
             <div class="service-row__price">6 600 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -311,7 +319,7 @@
               <p class="service-row__desc">Насыщение гиалуроновой кислотой без изменения природной формы. Эффект ухоженных, гладких губ.</p>
             </div>
             <div class="service-row__price">от 6 100 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -320,7 +328,7 @@
               <p class="service-row__desc">RF-лифтинг, микротоковая терапия, ультразвуковая чистка по индивидуальным показаниям.</p>
             </div>
             <div class="service-row__price">от 4 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -334,7 +342,7 @@
               <p class="service-row__desc">Ламинирование бровей, бережное осветление лишних волосков, удаление на переносице без травмирующего выщипывания по линии роста.</p>
             </div>
             <div class="service-row__price">4 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -343,7 +351,7 @@
               <p class="service-row__desc">Индивидуальный подбор формы под пропорции лица, стойкое бережное окрашивание.</p>
             </div>
             <div class="service-row__price">от 2 000 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -352,7 +360,7 @@
               <p class="service-row__desc">Красивый естественный изгиб, насыщение кератином, визуальное удлинение и стойкий цвет.</p>
             </div>
             <div class="service-row__price">3 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -366,7 +374,7 @@
               <p class="service-row__desc">Глубокая проработка по массажным линиям, устранение отечности, четкий контур лица и улучшение тургора кожи.</p>
             </div>
             <div class="service-row__price">2 800 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -375,7 +383,7 @@
               <p class="service-row__desc">Деликатное снятие мышечных зажимов, восстановление баланса и глубокая релаксация нервной системы.</p>
             </div>
             <div class="service-row__price">4 000 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -384,7 +392,7 @@
               <p class="service-row__desc">Аппаратное моделирование контуров тела, стимуляция лимфотока и уменьшение объемов.</p>
             </div>
             <div class="service-row__price">от 3 300 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -398,7 +406,7 @@
               <p class="service-row__desc">Мягкое удаление нежелательных волос натуральной сахарной пастой без раздражения кожи.</p>
             </div>
             <div class="service-row__price">от 1 200 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
 
           <div class="service-row">
@@ -407,7 +415,7 @@
               <p class="service-row__desc">Быстрая и комфортная процедура для любых зон, включая деликатные зоны лица и тела.</p>
             </div>
             <div class="service-row__price">от 1 500 ₽</div>
-            <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="btn btn--sm btn--primary">Записаться</a>
+            <button class="btn btn--sm btn--primary open-booking-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -538,6 +546,23 @@
           </div>
         </div>
 
+                <!-- Рози -->
+        <div class="master-card">
+          <div class="master-card__avatar-wrap">
+            <img src="images/masters/rozi.png" alt="Рози — мастер взгляда и стайлинга" class="master-card__avatar">
+            <span class="master-card__score">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#f5a623"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              5.0 (65 оценок)
+            </span>
+          </div>
+          <div class="master-card__body">
+            <h3 class="master-card__name">Рози</h3>
+            <span class="master-card__role">Мастер взгляда и стайлинга</span>
+            <p class="master-card__desc">Специалист по моделированию и ламинированию ресниц, архитектуре бровей и созданию праздничных укладок.</p>
+            <button class="btn btn--sm btn--outline w-100 mt-10 open-booking-btn" data-service="Мастер Рози">Записаться к Рози</button>
+          </div>
+        </div>
+
         <!-- Мадина -->
         <div class="master-card">
           <div class="master-card__avatar-wrap">
@@ -558,34 +583,71 @@
     </div>
   </section>
 
-  <!-- Gallery / Atmosphere (Реальные фотографии с Яндекс Карт) -->
+    <!-- Gallery / Atmosphere (Реальные фотографии с Яндекс Карт) -->
   <section class="section" id="gallery">
     <div class="container">
       <div class="section-head text-center">
         <span class="section-head__subtitle">Эстетика пространства</span>
-        <h2 class="section-head__title">Интерьер «Моя красивая»</h2>
+        <h2 class="section-head__title">Интерьер и атмосфера «Моя красивая»</h2>
         <p class="section-head__desc">Теплый свет, мягкие кресла, премиальные материалы и идеальная чистота в каждом уголке.</p>
       </div>
 
-      <div class="gallery-grid">
-        <div class="gallery-card">
+      <!-- Gallery Filters -->
+      <div class="gallery-filters text-center">
+        <button class="gallery-filter-btn active" data-filter="all">Все фото</button>
+        <button class="gallery-filter-btn" data-filter="interior">Интерьер и залы</button>
+        <button class="gallery-filter-btn" data-filter="nails">Ногтевой сервис</button>
+        <button class="gallery-filter-btn" data-filter="hair">Стрижки и колористика</button>
+        <button class="gallery-filter-btn" data-filter="care">Уют и чайная карта</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-card" data-category="hair" data-img="images/salon_hair.jpg" data-caption="Парикмахерский зал и зона профессионального стайлинга">
           <img src="images/salon_hair.jpg" alt="Парикмахерский зал Моя красивая" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Парикмахерский зал и зона профессионального стайлинга</div>
+          <div class="gallery-card__caption">Парикмахерский зал и зона стайлинга</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card" data-category="nails" data-img="images/salon_nails.jpg" data-caption="Зона маникюра и педикюра с эргономичными креслами">
           <img src="images/salon_nails.jpg" alt="Зона маникюра и педикюра" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Зона маникюра и педикюра с эргономичными креслами</div>
+          <div class="gallery-card__caption">Зона маникюра и педикюра</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card" data-category="interior" data-img="images/salon_cosmetology.jpg" data-caption="Кабинет косметологии и приватных уходовых процедур">
           <img src="images/salon_cosmetology.jpg" alt="Кабинет косметологии" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Косметологический кабинет и зона уходовых процедур</div>
+          <div class="gallery-card__caption">Кабинет косметологии и ухода</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card" data-category="care" data-img="images/salon_interior.jpg" data-caption="Зона ожидания, комплименты гостям и массаж Bork">
           <img src="images/salon_interior.jpg" alt="Зона отдыха и ресепшн" class="gallery-card__img" loading="lazy">
-          <div class="gallery-card__caption">Уютная зона ожидания, чайная карта и девайсы Bork</div>
+          <div class="gallery-card__caption">Зона отдыха, чайная карта и девайсы Bork</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+
+        <div class="gallery-card" data-category="interior" data-img="images/gallery/img_02.jpg" data-caption="Эстетичный светлый интерьер пространства «Моя красивая»">
+          <img src="images/gallery/img_02.jpg" alt="Интерьер салона" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Светлое пространство и панорамные зеркала</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+
+        <div class="gallery-card" data-category="nails" data-img="images/gallery/img_03.jpg" data-caption="Рабочее место мастера маникюра с профессиональной вытяжкой и дезинфекцией">
+          <img src="images/gallery/img_03.jpg" alt="Маникюрный стол" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Стерильность и премиальные материалы</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+
+        <div class="gallery-card" data-category="hair" data-img="images/gallery/img_04.jpg" data-caption="Комфортная мойка для волос с массажным креслом">
+          <img src="images/gallery/img_04.jpg" alt="Зона мойки волос" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Релакс-зона для мытья и спа-ухода за волосами</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+
+        <div class="gallery-card" data-category="care" data-img="images/gallery/img_07.jpg" data-caption="Уютный детский уголок и витрина заботы для гостей">
+          <img src="images/gallery/img_07.jpg" alt="Детский уголок и бьюти-бар" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__caption">Детский уголок и витрина натурального ухода</div>
+          <div class="gallery-card__zoom-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
         </div>
       </div>
     </div>
@@ -666,6 +728,79 @@
         <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/" target="_blank" rel="noopener" class="btn btn--outline">
           Читать все 360+ отзывов на Яндекс Картах
         </a>
+      </div>
+    </div>
+  </section>
+
+    <!-- FAQ Section (Интерактивный аккордеон с частыми вопросами) -->
+  <section class="section section--light" id="faq">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-head__subtitle">Вопросы и ответы</span>
+        <h2 class="section-head__title">Всё, что важно знать о нас</h2>
+        <p class="section-head__desc">Собрали ответы на главные вопросы гостей о комфорте, безопасности и формате нашего пространства.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-item__trigger">
+            <span>Почему ваше пространство позиционируется «только для женщин»?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__body">
+            <p>Мы создали оазис уюта, где каждая женщина может почувствовать себя в абсолютной безопасности и расслаблении. В нашем салоне работают исключительно женщины, нет мужчин среди персонала или посетителей. Вы можете спокойно снять платок или верхнюю одежду, забыть о суете мегаполиса и посвятить время только себе.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__trigger">
+            <span>Подходит ли салон для мусульманок и покрытых девушек?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__body">
+            <p>Да, абсолютно! Мы с особым трепетом относимся к пожеланиям покрытых гостей: окна изолированы, приватность строго соблюдается. В салоне оборудована чистая и уютная комната для совершения молитвы (намаза), а среди услуг представлены покрытие ногтей хной и халяль-совместимые косметические уходы.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__trigger">
+            <span>Что за бесплатный массаж Bork в качестве комплимента?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__body">
+            <p>Мы ценим ваше время. При длительных процедурах — например, во время сложного окрашивания волос, уходовых ритуалов или маникюра — администраторы предлагают расслабляющий массаж шейно-воротниковой зоны премиальными массажерами Bork. Это абсолютно бесплатно, как и свежесваренный кофе, чай и угощения.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__trigger">
+            <span>Можно ли прийти на процедуру вместе с ребенком?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__body">
+            <p>Конечно! Мы рады мамам с малышами. В салоне обустроен безопасный детский игровой уголок с игрушками и раскрасками, чтобы ваш ребенок был увлечен и рядом, пока мастера создают для вас красоту.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__trigger">
+            <span>Что такое стрижка по «Кудрявому методу» (Curly Cut)?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__body">
+            <p>Это бережная техника сухой стрижки волнистых и кудрявых волос, при которой мастер учитывает упругость и направление каждого локона в его естественном состоянии. Мы обучаем уходу за кудрями дома, используем бессульфатные средства и сушим волосы бережным диффузором без пушения.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__trigger">
+            <span>Как добраться и есть ли парковка рядом с салоном?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__body">
+            <p>Мы находимся по адресу: Москва, ул. Дубининская, 57, стр. 3. Для гостей на автомобиле доступна парковка. Пешком удобно добираться от метро Серпуховская (около 10–12 минут) или на трамвае от метро Павелецкая и Тульская прямо до остановки «Дубининская улица, 57».</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -768,6 +903,103 @@
       </div>
     </div>
   </footer>
+
+    <!-- Interactive Booking Options Modal -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true">
+    <div class="booking-modal__overlay" id="modalOverlay"></div>
+    <div class="booking-modal__content">
+      <button class="booking-modal__close" id="modalClose" aria-label="Закрыть">&times;</button>
+      
+      <div class="booking-modal__head">
+        <span class="badge badge--gold">Онлайн-запись</span>
+        <h3 class="booking-modal__title">Выберите удобный способ записи</h3>
+        <p class="booking-modal__desc">Пространство красоты «Моя красивая» • ул. Дубининская, 57, стр. 3</p>
+      </div>
+
+      <div class="booking-options">
+        <a href="https://n1250590.yclients.ru/" target="_blank" rel="noopener" class="booking-opt-card booking-opt-card--yclients">
+          <div class="booking-opt-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="14" r="2"/></svg>
+          </div>
+          <div class="booking-opt-card__body">
+            <div class="booking-opt-card__title">Онлайн-запись YClients <span class="tag">Быстро</span></div>
+            <div class="booking-opt-card__sub">Выбор конкретного мастера, процедуры и свободного окошка в реальном времени</div>
+          </div>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="https://yandex.ru/maps/org/moya_krasivaya/66822314490/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=66822314490&ll=37.636136%2C55.720940&mode=search&text=%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F&z=18.59" target="_blank" rel="noopener" class="booking-opt-card booking-opt-card--yandex">
+          <div class="booking-opt-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="booking-opt-card__body">
+            <div class="booking-opt-card__title">Запись на Яндекс Картах</div>
+            <div class="booking-opt-card__sub">Рейтинг 5.0 • Награда «Хорошее место 2026» • 360+ отзывов</div>
+          </div>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="https://wa.me/79268505150?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%81%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83" target="_blank" rel="noopener" class="booking-opt-card booking-opt-card--wa">
+          <div class="booking-opt-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </div>
+          <div class="booking-opt-card__body">
+            <div class="booking-opt-card__title">Написать администратору в WhatsApp</div>
+            <div class="booking-opt-card__sub">Ответим в течение 2 минут, подберем мастера и ответим на любые вопросы</div>
+          </div>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="https://t.me/m_krasivaya" target="_blank" rel="noopener" class="booking-opt-card booking-opt-card--tg">
+          <div class="booking-opt-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          </div>
+          <div class="booking-opt-card__body">
+            <div class="booking-opt-card__title">Написать в Telegram @m_krasivaya</div>
+            <div class="booking-opt-card__sub">Быстрая связь с заботливым администратором пространства</div>
+          </div>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="tel:+79268505150" class="booking-opt-card booking-opt-card--phone">
+          <div class="booking-opt-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="booking-opt-card__body">
+            <div class="booking-opt-card__title">Позвонить: +7 (926) 850-51-50</div>
+            <div class="booking-opt-card__sub">Ежедневно с 09:30 до 21:30 без перерывов</div>
+          </div>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Lightbox Modal -->
+  <div class="lightbox" id="lightboxModal" aria-hidden="true">
+    <div class="lightbox__overlay" id="lightboxOverlay"></div>
+    <div class="lightbox__container">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">&times;</button>
+      <img src="" alt="" class="lightbox__img" id="lightboxImg">
+      <div class="lightbox__caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Floating Sticky Bar -->
+  <aside class="mobile-bottom-bar" aria-label="Быстрые действия">
+    <a href="tel:+79268505150" class="mobile-bottom-bar__btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Звонок</span>
+    </a>
+    <button class="mobile-bottom-bar__btn mobile-bottom-bar__btn--primary open-booking-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>Записаться</span>
+    </button>
+    <a href="https://wa.me/79268505150?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D1%81%D0%B0%D0%BB%D0%BE%D0%BD%20%C2%AB%D0%9C%D0%BE%D1%8F%20%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%B0%D1%8F%C2%BB" target="_blank" rel="noopener" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </aside>
 
   <script src="script.js"></script>
 </body>
